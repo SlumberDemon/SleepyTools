@@ -1,5 +1,5 @@
 import requests
-
+import validators
 import streamlit as st
 
 st.markdown(f"# SleepyTools")
@@ -12,10 +12,13 @@ st.markdown(f"###### {tool}")
 if tool == "Link Shortener":
     url = st.text_input("Url")
     if url:
-        submit = st.button("Shorten")
-        if submit:
-            r = requests.post(f"https://sleepy.deta.dev/shorten?url={url}")
-            st.success(f"Link shortened: {r.json()['url']}")
+        if validators.url(url) is True:
+            submit = st.button("Shorten")
+            if submit:
+                r = requests.post(f"https://sleepy.deta.dev/shorten?url={url}")
+                st.success(f"Link shortened: {r.json()['url']}")
+        else:
+            st.warning("Make sure the input is a valid url")
         
 elif tool == "Embed Creator":
     c1, c2 = st.columns(2)
