@@ -11,9 +11,11 @@ st.markdown(f"###### {tool}")
 
 if tool == "Link Shortener":
     url = st.text_input("Url")
+    submit = st.button("Shorten")
     if url:
-        r = requests.post(f"https://sleepy.deta.dev/shorten?url={url}")
-        st.success(f"Link shortened: {r.json()['url']}")
+        if submit:
+            r = requests.post(f"https://sleepy.deta.dev/shorten?url={url}")
+            st.success(f"Link shortened: {r.json()['url']}")
         
 elif tool == "Embed Creator":
     c1, c2 = st.columns(2)
