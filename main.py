@@ -38,9 +38,12 @@ elif tool == "Embed Creator":
     submit = st.button("Generate embed")
 
     if submit:
-        r = requests.post(
-            f"https://sleepy.deta.dev/embed?title={title}&description={description}&image={image}&colour={c}&size={size}&url={url}"
-        )
-        st.success(f"Embed created: {r.json()['url']}")
+        if title:
+            r = requests.post(
+                f"https://sleepy.deta.dev/embed?title={title}&description={description}&image={image}&colour={c}&size={size}&url={url}"
+            )
+            st.success(f"Embed created: {r.json()['url']}")
+        else:
+            st.warning("A title is required")
 
 st.caption("[Source](https://github.com/SlumberDemon/SleepyTools)")
