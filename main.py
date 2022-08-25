@@ -26,7 +26,7 @@ elif tool == "Embed Creator":
         image = st.text_input("Image url")
         size = st.selectbox("Image size", [None, "small", "large"])
     with b2:
-        url = st.text_input("Website url", value=None)
+        url = st.text_input("Website url")
         colour = st.color_picker("Colour")
         c = colour.replace("#", "")
 
