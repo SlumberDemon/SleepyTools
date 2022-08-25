@@ -21,9 +21,9 @@ elif tool == "Embed Creator":
     with c1:
         title = st.text_input("Title")
     with c2:
-        description = st.text_input("Description", value=None)
+        description = st.text_input("Description")
     with b1:
-        image = st.text_input("Image url", value=None)
+        image = st.text_input("Image url")
         size = st.selectbox("Image size", [None, "small", "large"])
     with b2:
         url = st.text_input("Website url", value=None)
