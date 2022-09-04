@@ -1,11 +1,16 @@
 import requests
-import validators
 import streamlit as st
+import validators
+from streamlit_option_menu import option_menu
 
 st.markdown(f"# SleepyTools")
 
 with st.sidebar:
-    tool = st.selectbox("Select tool", ["Link Shortener", "Embed Creator"])
+    tool = option_menu(
+        menu_title="Tools",
+        options=["Link Shortener", "Embed Creator"],
+        icons=["🔗", "📦"],
+    )
 
 st.markdown(f"###### {tool}")
 
@@ -19,7 +24,7 @@ if tool == "Link Shortener":
                 st.success(f"Link shortened: {r.json()['url']}")
         else:
             st.warning("Make sure the input is a valid url")
-        
+
 elif tool == "Embed Creator":
     c1, c2 = st.columns(2)
     b1, b2 = st.columns(2)
