@@ -5,4 +5,4 @@ Tools to make development easier
 
 > [Click Here](https://sleepy.deta.dev/docs) for api
 
-[![Deploy](https://button.deta.dev/1/svg)](https://github.com/SlumberDemon/SleepyTools/tree/main/website)
+[![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy?repo=https://github.com/SlumberDemon/SleepyTools/tree/main/website)
